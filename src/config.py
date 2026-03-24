@@ -133,6 +133,16 @@ def get_nanobanana2_model() -> str:
     with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
         return json.load(file).get("nanobanana2_model", "gemini-3.1-flash-image-preview")
 
+def get_gemini_review_model() -> str:
+    """
+    Gets the Gemini model name for video review.
+
+    Returns:
+        model (str): Model name
+    """
+    with open(os.path.join(ROOT_DIR, "config.json"), "r") as file:
+        return json.load(file).get("gemini_review_model", "gemini-2.5-flash")
+
 def get_nanobanana2_aspect_ratio() -> str:
     """
     Gets the aspect ratio for Nano Banana 2 image generation.

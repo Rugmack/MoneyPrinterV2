@@ -16,6 +16,7 @@ Route user requests to the appropriate MPV2 skill. Understand user intent and de
 | `preflight` | User wants to check if their setup is ready (Ollama, config, etc.) |
 | `config-manager` | User wants to view or edit config.json settings |
 | `account-manager` | User wants to add, list, or remove YouTube/Twitter accounts |
+| `quality-loop` | User wants to generate a video and iteratively improve its quality via Gemini review |
 
 ## Routing Rules
 
@@ -25,7 +26,8 @@ Route user requests to the appropriate MPV2 skill. Understand user intent and de
 4. If the user says "check setup", "preflight", "is everything working?" → `preflight`
 5. If the user says "change config", "set model", "edit settings" → `config-manager`
 6. If the user says "add account", "list accounts", "remove account" → `account-manager`
-7. If unclear, ask the user what they want to do.
+7. If the user says "improve quality", "review and improve", "make it realistic", "optimize", "quality loop" → `quality-loop`
+8. If unclear, ask the user what they want to do.
 
 ## Project Context
 

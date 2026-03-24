@@ -23,6 +23,9 @@ def main():
     parser.add_argument("--video-path", required=True, help="Path to MP4 file")
     parser.add_argument("--title", required=True, help="Video title")
     parser.add_argument("--description", required=True, help="Video description")
+    parser.add_argument("--visibility", default="unlisted",
+                        choices=["public", "private", "unlisted"],
+                        help="Video visibility (default: unlisted)")
     args = parser.parse_args()
 
     if not os.path.isfile(args.video_path):
@@ -55,7 +58,7 @@ def main():
     youtube.video_path = os.path.abspath(args.video_path)
     youtube.metadata = {"title": args.title, "description": args.description}
 
-    result = youtube.upload_video()
+    result = youtube.upload_video(visibility=args.visibility)
 
     if result:
         success(f"Upload successful: {youtube.uploaded_video_url}")

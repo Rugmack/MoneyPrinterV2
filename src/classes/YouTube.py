@@ -700,7 +700,7 @@ class YouTube:
 
         return channel_id
 
-    def upload_video(self) -> bool:
+    def upload_video(self, visibility="unlisted") -> bool:
         """
         Uploads the video to YouTube.
 
@@ -792,12 +792,13 @@ class YouTube:
             next_button = driver.find_element(By.ID, YOUTUBE_NEXT_BUTTON_ID)
             next_button.click()
 
-            # Set as unlisted
+            # Set visibility
+            visibility_index = {"public": 0, "private": 1, "unlisted": 2}
             if verbose:
-                info("\t=> Setting as unlisted...")
+                info(f"\t=> Setting as {visibility}...")
 
             radio_button = driver.find_elements(By.XPATH, YOUTUBE_RADIO_BUTTON_XPATH)
-            radio_button[2].click()
+            radio_button[visibility_index[visibility]].click()
 
             if verbose:
                 info("\t=> Clicking done button...")
