@@ -1,0 +1,9 @@
+{
+  "hooks": [
+    {
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "command": "bash claude-plugin/hooks/check-config.sh"
+    }
+  ]
+}

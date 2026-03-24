@@ -1,0 +1,16 @@
+{
+  "name": "moneyprinter-v2",
+  "version": "0.1.0",
+  "description": "Claude Code plugin for MoneyPrinterV2 — automate YouTube Shorts generation, upload, and account management via natural language.",
+  "author": "MoneyPrinterV2",
+  "skills": [
+    "skills/director/SKILL.md",
+    "skills/youtube-generate/SKILL.md",
+    "skills/youtube-upload/SKILL.md",
+    "skills/youtube-full-pipeline/SKILL.md",
+    "skills/preflight/SKILL.md",
+    "skills/config-manager/SKILL.md",
+    "skills/account-manager/SKILL.md"
+  ],
+  "hooks": "hooks/hooks.json"
+}
